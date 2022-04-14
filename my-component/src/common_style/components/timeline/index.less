@@ -1,0 +1,31 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-timeline {
+    color: @text-title;
+}
+.ant-timeline-item-tail {
+  border-left: 2px solid @line-split;
+}
+.ant-timeline.ant-timeline-pending .ant-timeline-item-last .ant-timeline-item-tail {
+  border-left: 2px dotted @line-split;
+}
+.ant-timeline.ant-timeline-reverse .ant-timeline-item-pending .ant-timeline-item-tail {
+  border-left: 2px dotted @line-split;
+}
+.ant-timeline-item-head-blue {
+  color: @primary-color;
+  border-color: @primary-color;
+}
+.ant-timeline-item-head-red {
+  color: @error-color;
+  border-color: @error-color;
+}
+.ant-timeline-item-head-green {
+  color: @success-color;
+  border-color: @success-color;
+}
+.ant-timeline-item-head-gray {
+  color: @line-split;
+  border-color: @line-split;
+}

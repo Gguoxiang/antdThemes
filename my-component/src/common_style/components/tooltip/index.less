@@ -1,0 +1,31 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-tooltip {
+    color: @text-title;
+    border-radius: @card-radius;
+}
+.ant-tooltip-content {
+    max-height: 320px;
+    overflow-y: auto;
+    border-radius: @card-radius;
+    padding: 10px;
+    background-color: @tooltip-mask;
+    &::-webkit-scrollbar-thumb {
+        background-color: @fill-button;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+.ant-tooltip-inner {
+    font-size: @font-title-small;
+    border-radius: @card-radius;
+    // background-color: @tooltip-mask;
+    background-color: @transparent;
+}
+.ant-tooltip-arrow::before {
+    background-color: @tooltip-mask;
+}

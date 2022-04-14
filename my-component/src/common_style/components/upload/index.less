@@ -1,0 +1,84 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-upload {
+    color: @text-title;
+}
+.ant-upload-list-text .ant-upload-list-item-info {
+    background-color: @fill-form;
+    border-radius: @btn-radius;
+}
+.ant-upload-list-picture .ant-upload-list-item-list-type-picture {
+    background-color: @fill-form;
+    border-radius: @btn-radius;
+    border: none;
+}
+.ant-upload-list-picture .ant-upload-list-item-list-type-picture:hover {
+    background-color: @primary-bg;
+}
+.ant-upload-list-picture .ant-upload-list-item-list-type-picture.ant-upload-list-item-error {
+    background-color: @danger-light;
+}
+.ant-upload-list-picture .ant-upload-list-item-list-type-picture.ant-upload-list-item-error:hover {
+    background-color: #FEDCDC;
+}
+.ant-upload.ant-upload-select-picture-card:hover {
+  border-color: @primary-color;
+}
+.ant-upload-list-item-done .ant-upload-list-item-name {
+    color: @primary-color;
+}
+.ant-upload-list-item-error .ant-upload-list-item-name {
+  color: @error-color;
+}
+.ant-upload-list-item-error:hover .ant-upload-list-item-name {
+    color: @danger-hover;
+}
+.ant-upload-list-item-error .ant-upload-list-item-card-actions .anticon {
+  color: @error-color;
+}
+.ant-upload-list-item-error:hover .ant-upload-list-item-card-actions .anticon {
+    color: @danger-hover;
+  }
+.ant-upload-list-picture .ant-upload-list-item-error,
+.ant-upload-list-picture-card .ant-upload-list-item-error {
+  border-color: @error-color;
+}
+.ant-upload-list .ant-upload-success-icon {
+  color: @success-color;
+}
+.ant-upload-list-item:hover .ant-upload-list-item-info {
+    color: @primary-hover;
+    background-color: @primary-bg;
+}
+.ant-upload-list-item-info .anticon-loading, .ant-upload-list-item-info .anticon-paper-clip,
+.ant-upload-list-item-card-actions .anticon {
+    color: @text-title;
+}
+.ant-upload.ant-upload-select-picture-card {
+    background-color: @fill-form;
+    border-radius: @btn-radius;
+    border: 1px dashed @text-prompt;
+}
+.ant-upload.ant-upload-drag {
+    background-color: @fill-form;
+    border-radius: @btn-radius;
+    border: 1px dashed @text-prompt;
+}
+.ant-upload.ant-upload-drag:not(.ant-upload-disabled):hover {
+    border-color: @primary-color;
+    background-color: @primary-bg;
+}
+.ant-upload.ant-upload-drag p.ant-upload-text {
+    color: @text-title;
+}
+.ant-upload.ant-upload-drag p.ant-upload-hint {
+    color: @text-secondary;
+}
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+    color: @text-body;
+    font-size: 20px;
+}
+.ant-upload.ant-upload-drag:hover p.ant-upload-drag-icon .anticon {
+    color: @primary-hover;
+}

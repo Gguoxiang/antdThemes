@@ -1,0 +1,21 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-table {
+    color: @text-body;
+    font-size: @font-body;
+}
+.ant-table-thead > tr > th {
+    color: @text-title;
+    font-weight: @font-weight-big;
+    background: @background-text;
+    border-bottom: 1px solid @line-light;
+    padding: 12px 16px;
+}
+.ant-table-tbody > tr > td {
+    padding: 9px 16px;
+    border-bottom: 1px solid @background-text;
+}
+.ant-table-tbody > tr:nth-child(even) {
+    background-color: @background-text;
+}
