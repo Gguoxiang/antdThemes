@@ -1,0 +1,51 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-menu {
+    color: @text-title;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    color: @primary-color;
+    background:rgba(5, 105, 255, 0.1);
+    border-radius: 2px;
+}
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+    color: @primary-color;
+}
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+    border-right: none;
+}
+.ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right, .ant-menu-root.ant-menu-inline {
+    box-shadow: @big-shadow;
+}
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title {
+    margin-top: 0;
+}
+.ant-menu-inline-collapsed {
+    width: 48px;
+    // padding: 20px 16px;
+}
+.ant-menu-inline-collapsed > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding: 0 16px !important;
+}
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+    font-size: 16px;
+}
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+    border-right: none;
+}
+.ant-menu:not(.ant-menu-horizontal).ant-menu-inline .ant-menu-item-selected {
+    background: @primary-bg;
+    border-radius: 0px 100px 100px 0px;
+}
+.ant-menu-vertical .ant-menu-submenu-selected, .ant-menu-vertical-left .ant-menu-submenu-selected, .ant-menu-vertical-right .ant-menu-submenu-selected {
+    color: @primary-color;
+}
+.ant-menu.ant-menu-dark.ant-menu-inline .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark.ant-menu-inline .ant-menu-item-selected {
+    color: @white;
+    background-color: @primary-bg;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    color: @white;
+    background-color: @primary-bg;
+}

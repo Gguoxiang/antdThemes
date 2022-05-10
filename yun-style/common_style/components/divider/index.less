@@ -1,0 +1,18 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-divider {
+  background: @border-color-split;
+}
+.ant-divider-horizontal.ant-divider-with-text-center::before,
+.ant-divider-horizontal.ant-divider-with-text-left::before,
+.ant-divider-horizontal.ant-divider-with-text-right::before,
+.ant-divider-horizontal.ant-divider-with-text-center::after,
+.ant-divider-horizontal.ant-divider-with-text-left::after,
+.ant-divider-horizontal.ant-divider-with-text-right::after {
+  border-top: 1px solid @border-color-split;
+}
+.ant-divider-dashed {
+  border-color: @border-color-split;
+  background: none;
+}

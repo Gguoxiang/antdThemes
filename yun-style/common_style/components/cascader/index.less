@@ -1,0 +1,63 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-cascader-input.ant-input {
+    color: @text-title;
+    font-size: @font-body;
+    border-radius: @btn-radius;
+    background-color: @fill-form !important;
+    border: 1px solid @fill-form;
+}
+.ant-cascader-picker .anticon {
+    font-size: @font-secondary;
+}
+.ant-cascader-picker-arrow {
+    color: @text-body;
+}
+.ant-cascader-menus {
+    box-shadow: @small-shadow;
+}
+.ant-cascader-menus .anticon {
+    font-size: @font-secondary;
+}
+// .ant-cascader-picker:hover .ant-cascader-picker-arrow {
+//     opacity: 0;
+// }
+.ant-cascader-picker:hover .ant-cascader-picker-clear + .ant-cascader-picker-arrow {
+    opacity: 0;
+}
+.ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled), .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+    background-color: @primary-bg;
+    color: @primary-color;
+    font-weight: @font-weight-middle;
+}
+.ant-cascader-menu-item:hover {
+    background-color: @primary-bg;
+}
+.ant-cascader-picker {
+    color: @text-title;
+    font-size: @font-body;
+}
+.ant-cascader-menu-item {
+    color: @text-title;
+    font-size: @font-body;
+}
+.ant-cascader-menu-item-disabled {
+    color: @text-prompt;
+}
+.ant-cascader-menu-item-disabled:hover {
+    background-color: @transparent;
+}
+.ant-cascader-menu {
+    border-right: 1px solid @line-light;
+}
+.ant-cascader-menu:first-child {
+    border-radius: @card-radius 0 0 @card-radius;
+}
+.ant-cascader-menu:last-child {
+    border-radius: 0 @card-radius @card-radius 0;
+}
+.has-error .ant-cascader-input.ant-input {
+    background-color: @danger-light !important;
+    border-color: @danger-light;
+}

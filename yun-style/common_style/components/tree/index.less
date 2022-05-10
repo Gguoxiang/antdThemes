@@ -1,0 +1,45 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-tree li .ant-tree-node-content-wrapper {
+    color: @text-title;
+    font-size: @font-body;
+    font-family: @font-family;
+    font-weight: @font-weight-middle;
+}
+.ant-tree li .ant-tree-node-content-wrapper:hover {
+    color: @primary-color;
+    background-color: @transparent;
+}
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+    color: @primary-color;
+    background-color: @transparent;
+}
+.ant-tree-checkbox-inner {
+    width: 14px;
+    height: 14px;
+    background: @fill-search;
+    border: 1px solid @border-default;
+    border-radius: @small-radius;
+}
+.ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+    background-color: @primary-color;
+    border-color: @primary-color;
+}
+.ant-tree-checkbox-checked::after {
+    border: none;
+}
+.ant-tree-checkbox-wrapper:hover .ant-tree-checkbox-inner, .ant-tree-checkbox:hover .ant-tree-checkbox-inner, .ant-tree-checkbox-input:focus + .ant-tree-checkbox-inner {
+    border-color: @primary-color;
+}
+.ant-tree-checkbox-inner::after {
+    top: 47%;
+    left: 20%;
+}
+.ant-tree-checkbox-disabled.ant-tree-checkbox-checked .ant-tree-checkbox-inner::after {
+    border-color: @white;
+}
+.ant-tree-checkbox-disabled.ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+    background-color: rgba(5, 105, 255, 0.5);
+    border-color: rgba(5, 105, 255, 0.5) !important;
+}

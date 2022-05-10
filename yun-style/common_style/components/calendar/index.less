@@ -1,0 +1,67 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-calendar {
+    width: 340px;
+    box-shadow: @small-shadow;
+}
+.ant-calendar-picker {
+    // width: 340px;
+}
+.ant-calendar-range {
+    width: 688px;
+}
+.ant-calendar-time-picker-select {
+    border-right: 1px solid @line-light;
+}
+.ant-calendar-time-picker-select li {
+    height: 32px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0 0 0 20px;
+}
+.ant-calendar-time-picker-select li:hover {
+    background: @primary-bg;
+}
+li.ant-calendar-time-picker-select-option-selected {
+    color: @primary-color;
+    background: @primary-bg; 
+}
+.ant-calendar-range-picker-input::-moz-placeholder,
+.ant-calendar-picker-input.ant-input::-moz-placeholder {
+    color: @text-prompt;
+}
+.ant-calendar-range-picker-input:-ms-input-placeholder,
+.ant-calendar-picker-input.ant-input:-ms-input-placeholder {
+    color: @text-prompt;
+}
+.ant-calendar-range-picker-input::-webkit-input-placeholder,
+.ant-calendar-picker-input.ant-input::-webkit-input-placeholder {
+    color: @text-prompt;
+}
+.ant-cascader-picker:focus .ant-cascader-input {
+    border-color: @primary-color;
+    box-shadow: 0 0 0 2px rgba(5, 105, 255, 20%);
+}
+.ant-calendar .ant-calendar-ok-btn {
+    background-color: @primary-color;
+    border-color: @primary-color;
+}
+.ant-calendar .ant-calendar-ok-btn:hover, .ant-calendar .ant-calendar-ok-btn:focus {
+    background-color: @primary-hover;
+    border-color: @primary-hover;
+}
+.ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+    border-color: @primary-hover;
+}
+.has-error .ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+    border-color: @error-color;
+}
+.ant-calendar .ant-calendar-ok-btn-disabled, .ant-calendar .ant-calendar-ok-btn.disabled, .ant-calendar .ant-calendar-ok-btn[disabled], .ant-calendar .ant-calendar-ok-btn-disabled:hover, .ant-calendar .ant-calendar-ok-btn.disabled:hover, .ant-calendar .ant-calendar-ok-btn[disabled]:hover, .ant-calendar .ant-calendar-ok-btn-disabled:focus, .ant-calendar .ant-calendar-ok-btn.disabled:focus, .ant-calendar .ant-calendar-ok-btn[disabled]:focus, .ant-calendar .ant-calendar-ok-btn-disabled:active, .ant-calendar .ant-calendar-ok-btn.disabled:active, .ant-calendar .ant-calendar-ok-btn[disabled]:active, .ant-calendar .ant-calendar-ok-btn-disabled.active, .ant-calendar .ant-calendar-ok-btn.disabled.active, .ant-calendar .ant-calendar-ok-btn[disabled].active {
+    color: @white;
+}
+.ant-calendar-time .ant-calendar-day-select {
+    color: @text-title;
+    font-size: @font-title-small;
+    font-weight: @font-weight-middle;
+}

@@ -1,0 +1,40 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-tooltip {
+    color: @text-title;
+    border-radius: @card-radius;
+}
+.ant-tooltip-content {
+    max-height: 320px;
+    overflow-y: auto;
+    border-radius: @card-radius;
+    padding: 8px 10px;
+    background-color: @tooltip-mask;
+    &::-webkit-scrollbar-thumb {
+        background-color: @scrollbar-bg-h;
+        border-radius: @small-radius;
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 1.5px;
+        background-clip: padding-box;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: @scrollbar-bg-h;
+    }
+    &::-webkit-scrollbar {
+        width: @scrollbar-size;
+        height: @scrollbar-size;
+    }
+}
+.ant-tooltip-inner {
+    font-size: @font-body;
+    min-height: unset;
+    border-radius: @card-radius;
+    padding: 0;
+    // background-color: @tooltip-mask;
+    background-color: @transparent;
+}
+.ant-tooltip-arrow::before {
+    background-color: @tooltip-mask;
+}

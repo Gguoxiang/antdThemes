@@ -1,0 +1,100 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-alert {
+    color: @alert-font-color;
+    font-size: @alert-font-size;
+    padding: 8px 15px 8px 37px;
+    border-radius: @border-radius-base;
+  }
+  .ant-alert.ant-alert-no-icon {
+    padding: 8px 15px;
+  }
+  .ant-alert.ant-alert-closable {
+    padding-right: 30px;
+  }
+  .ant-alert-icon {
+    top: 10px;
+    left: 16px;
+    font-size: 14px;
+  }
+  .ant-alert-description {
+    font-size: @alert-font-size;
+    line-height: @line-height;
+  }
+  .ant-alert-success {
+    background-color: @alert-success-bg-color;
+    border: 1px solid @alert-success-border-color;
+  }
+  .ant-alert-success .ant-alert-icon {
+    color: @alert-success-icon-color;
+  }
+  .ant-alert-info {
+    background-color: @alert-info-bg-color;
+    border: 1px solid @alert-info-border-color;
+  }
+  .ant-alert-info .ant-alert-icon {
+    color: @alert-info-icon-color;
+  }
+  .ant-alert-warning {
+    background-color: @alert-warning-bg-color;
+    border: 1px solid @alert-warning-border-color;
+  }
+  .ant-alert-warning .ant-alert-icon {
+    color: @alert-warning-icon-color;
+  }
+  .ant-alert-error {
+    background-color: @alert-error-bg-color;
+    border: 1px solid @alert-error-border-color;
+  }
+  .ant-alert-error .ant-alert-icon {
+    color: @alert-error-icon-color;
+  }
+  .ant-alert-close-icon {
+    top: 8px;
+    right: 16px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 22px;
+    background-color: transparent;
+  }
+  .ant-alert-close-icon .anticon-close {
+    color: rgba(0, 0, 0, 0.45);
+  }
+  .ant-alert-close-icon .anticon-close:hover {
+    color: rgba(0, 0, 0, 0.75);
+  }
+  .ant-alert-close-text {
+    color: rgba(0, 0, 0, 0.45);
+  }
+  .ant-alert-close-text:hover {
+    color: rgba(0, 0, 0, 0.75);
+  }
+  .ant-alert-with-description {
+    padding: 15px 15px 15px 64px;
+    color: @alert-font-color;
+    line-height: @line-height;
+    border-radius: @border-radius-base;
+  }
+  .ant-alert-with-description.ant-alert-no-icon {
+    padding: 15px;
+  }
+  .ant-alert-with-description .ant-alert-icon {
+    top: 16px;
+    left: 24px;
+    font-size: 16px;
+  }
+  .ant-alert-with-description .ant-alert-close-icon {
+    top: 16px;
+    right: 16px;
+    font-size: 14px;
+  }
+  .ant-alert-with-description .ant-alert-message {
+    margin-bottom: 4px;
+    color: @alert-font-color;
+    font-size: @alert-font-size + 2px;
+    font-weight: @font-weight-big;
+  }
+  .ant-alert-message {
+    color: @alert-font-color;
+  }

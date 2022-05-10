@@ -1,0 +1,44 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-pagination {
+    color: @text-body; 
+}
+.ant-pagination .anticon {
+    font-size: @font-secondary;
+}
+.ant-pagination-total-text {
+    color: @text-body;
+}
+.ant-pagination-item a {
+    color: @text-body;
+}
+.ant-pagination-item-active a {
+    color: @primary-color;
+}
+.ant-pagination-item-active {
+    font-weight: @font-weight-middle;
+    background: @primary-bg;
+    border-color: @primary-bg;
+}
+.ant-pagination-prev a, .ant-pagination-next a {
+    color: @text-body;
+}
+.ant-pagination-item:focus a, .ant-pagination-item:hover a {
+    color: @primary-color;
+}
+.ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link {
+    color: @primary-color;
+}
+.ant-pagination-simple .ant-pagination-simple-pager input {
+    padding: 0 2px;
+    background-color: @primary-bg;
+    border: 1px solid @primary-bg;
+    border-radius: @small-radius;
+}
+.ant-pagination-simple .ant-pagination-simple-pager input:hover {
+    border-color: @primary-bg;
+}
+.ant-pagination-item-active:focus, .ant-pagination-item-active:hover {
+    border-color: @primary-bg;
+}

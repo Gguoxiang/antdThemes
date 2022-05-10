@@ -1,0 +1,50 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-input-number {
+    color: @text-title;
+    background: @fill-form;
+    border-color: @fill-form;
+    border-radius: @btn-radius;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-number-input {
+    color: @text-title;
+    background: @fill-form;
+    border-color: @fill-form;
+    border-radius: @btn-radius;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-number:hover {
+    background: @primary-light;
+    border-color: @primary-color;
+}
+.ant-input-number-focused,
+.ant-input-number:focus {
+    border-color: @primary-color;
+    box-shadow: 0 0 0 2px rgba(5, 105, 255, 20%);
+}
+.ant-input-number[disabled] {
+    color: @text-prompt;
+    background: @fill-form;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-number-handler:hover .ant-input-number-handler-up-inner,
+.ant-input-number-handler:hover .ant-input-number-handler-down-inner {
+  color: @primary-color;
+}
+.ant-input-number-input::-moz-placeholder {
+  color: @text-prompt;
+}
+.ant-input-number-input:-ms-input-placeholder {
+  color: @text-prompt;
+}
+.ant-input-number-input::-webkit-input-placeholder {
+  color: @text-prompt;
+}

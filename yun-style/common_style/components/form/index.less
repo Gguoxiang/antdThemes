@@ -1,0 +1,55 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-form {
+    color: @text-body;
+    font-size: @font-body;
+    line-height: @line-height;
+}
+.ant-form-item {
+    color: @text-body;
+    font-size: @font-body;
+    line-height: @line-height;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.ant-form-item-label {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+.ant-form-item-label > label .anticon {
+    color: @text-body;
+}
+.ant-form-item-label > label::after {
+    content: '';
+}
+.ant-form-item-control-wrapper {
+    max-width: 600px;
+}
+// form表单校验错误色
+.ant-form-explain, .ant-form-extra {
+    color: @text-body;
+}
+.has-error .ant-input, .has-error .ant-input:hover {
+    background-color: @danger-light;
+    border-color: @danger-light;
+}
+.has-error .ant-input:focus {
+    border-color: @danger-click;
+}
+.has-error .ant-form-explain, .has-error .ant-form-split {
+    color: @danger-default;
+}
+.has-success.has-feedback .ant-form-item-children-icon {
+    color: @success-default;
+}
+.has-error.has-feedback .ant-form-item-children-icon {
+    color: @danger-default;
+}
+.has-error .ant-calendar-picker-icon::after, .has-error .ant-time-picker-icon::after, .has-error .ant-picker-icon::after, .has-error .ant-select-arrow, .has-error .ant-cascader-picker-arrow {
+    color: @danger-default;
+}

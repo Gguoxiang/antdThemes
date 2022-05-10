@@ -1,0 +1,144 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-input {
+    color: @text-title;
+    background: @fill-form;
+    border-color: @fill-form;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input:hover {
+    background: @primary-light;
+    border-color: @primary-color;
+}
+.ant-input:focus {
+    border-color: @primary-color;
+    background: @primary-light;
+    box-shadow: 0 0 0 2px rgba(5, 105, 255, 20%);
+}
+.ant-select-search__field__wrap .ant-input:focus {
+    box-shadow: unset;
+}
+.ant-input[disabled] {
+    color: @text-prompt;
+    background: @fill-form;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input[disabled]:hover {
+    border-color: @fill-form;
+}
+.ant-input-affix-wrapper {
+    font-size: @font-title-small;
+}
+.ant-input-search-icon {
+    color: @text-color;
+    display: none; // 隐藏原有图标，通过slot加上新图标
+}
+.ant-input-clear-icon {
+    font-size: @font-body;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input {
+    color: @text-title;
+    background: @fill-search;
+    border-color: @fill-search;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input[disabled] {
+    color: @text-prompt;
+    background: @fill-search;
+    border-color: @fill-search;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input:hover {
+    border-color: @primary-color;
+}
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+    border-color: @primary-color;
+    background: @primary-light;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input[disabled]:hover {
+    border-color: @line-light;
+    background: @fill-search;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input::-moz-placeholder,
+.ant-input::-moz-placeholder {
+    color: @text-prompt;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input:-ms-input-placeholder,
+.ant-input:-ms-input-placeholder {
+    color: @text-prompt;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input::-webkit-input-placeholder,
+.ant-input::-webkit-input-placeholder {
+    color: @text-prompt;
+}
+.ant-input-search.ant-input-affix-wrapper .ant-input:hover {
+    border-color: @primary-color;
+    background: @primary-light;
+}
+.ant-input-group .ant-input {
+    color: @text-title;
+    background: @fill-form;
+    border-color: @fill-form;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-group .ant-input[disabled] {
+    color: @text-prompt;
+    background: @fill-search;
+    border-color: @fill-search;
+    &::placeholder {
+        color: @text-prompt;
+    }
+}
+.ant-input-group .ant-input:hover {
+    border-color: @primary-color;
+}
+.has-error .ant-input-group .ant-input {
+    background-color: @danger-light;
+    border-color: @danger-light;
+}
+.has-error .ant-input:not([disabled]):hover {
+    border-color: @error-color;
+}
+.ant-input-group:hover .ant-input:not(.ant-input-disabled) {
+    border-color: @primary-color;
+    background: @primary-light;
+}
+.ant-input-group .ant-input[disabled]:hover {
+    border-color: @line-light;
+    background: @fill-search;
+}
+.ant-input-group .ant-input::-moz-placeholder,
+.ant-input::-moz-placeholder {
+    color: @text-prompt;
+}
+.ant-input-group .ant-input:-ms-input-placeholder,
+.ant-input:-ms-input-placeholder {
+    color: @text-prompt;
+}
+.ant-input-group .ant-input::-webkit-input-placeholder,
+.ant-input::-webkit-input-placeholder {
+    color: @text-prompt;
+}
+.ant-input-group .ant-input:hover {
+    border-color: @primary-color;
+    background: @primary-light;
+}
+.ant-input-group.ant-input-group-compact > *:first-child, .ant-input-group.ant-input-group-compact > .ant-select:first-child > .ant-select-selection, .ant-input-group.ant-input-group-compact > .ant-calendar-picker:first-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-select-auto-complete:first-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-cascader-picker:first-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:first-child .ant-mention-editor, .ant-input-group.ant-input-group-compact > .ant-time-picker:first-child .ant-time-picker-input {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.ant-input-group.ant-input-group-compact > *:last-child, .ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selection, .ant-input-group.ant-input-group-compact > .ant-calendar-picker:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-select-auto-complete:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-cascader-picker:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:last-child .ant-mention-editor, .ant-input-group.ant-input-group-compact > .ant-time-picker:last-child .ant-time-picker-input {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}

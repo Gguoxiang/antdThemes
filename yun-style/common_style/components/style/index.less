@@ -1,0 +1,112 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+/* stylelint-disable at-rule-no-unknown */
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+// 公共样式，对一些原生标签样式做调整
+body {
+  margin: 0;
+  color: @text-body;
+  font-size: @font-body;
+  font-family: @font-family;
+  line-height: @line-height;
+  background-color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: @text-title;
+  font-weight: @font-weight-big;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+a {
+  color: @primary-color;
+  background-color: transparent;
+}
+a:hover {
+  color: @primary-hover;
+}
+a:active {
+  color: @primary-active;
+}
+a[disabled] {
+  color: @text-prompt;
+}
+caption {
+  color: @text-body;
+}
+mark {
+  padding: 0.2em;
+  background-color: #feffe6;
+}
+::-moz-selection {
+  color: #fff;
+  background: @primary-color;
+}
+::selection {
+  color: #fff;
+  background: @primary-color;
+}
+.anticon {
+  font-size: @font-title-small;
+}
+html {
+  --antd-wave-shadow-color: @primary-color;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: @scrollbar-bg;
+  border-radius: @small-radius;
+  border-style: dashed;
+            border-color: transparent;
+            border-width: 1px;
+            background-clip: padding-box;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg;
+}
+.scroll::-webkit-scrollbar {
+  width: @scrollbar-size;
+  height: @scrollbar-size;
+}
+[ant-click-animating-without-extra-node='true']::after,
+.ant-click-animating-node {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 @primary-color;
+  box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
+  opacity: 0.2;
+  -webkit-animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+          animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  content: '';
+  pointer-events: none;
+}
+@-webkit-keyframes waveEffect {
+  100% {
+    box-shadow: 0 0 0 @primary-color;
+    box-shadow: 0 0 0 6px var(--antd-wave-shadow-color);
+  }
+}
+@keyframes waveEffect {
+  100% {
+    box-shadow: 0 0 0 @primary-color;
+    box-shadow: 0 0 0 6px var(--antd-wave-shadow-color);
+  }
+}

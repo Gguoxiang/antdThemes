@@ -1,0 +1,38 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-slider-rail {
+    height: 2px;
+    background-color: @line-split;
+}
+.ant-slider-step {
+    height: 2px;
+}
+.ant-slider-track {
+    height: 2px;
+    background-color: @primary-color;
+}
+.ant-slider-handle {
+    width: 16px;
+    height: 16px;
+    margin-top: -7px;
+    border: solid 4px @primary-color;
+}
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+    border: solid 4px rgba(5, 105, 255, 0.6);
+}
+.ant-slider:hover .ant-slider-track {
+    background-color: rgba(5, 105, 255, 0.6);
+}
+.ant-slider-disabled .ant-slider-rail {
+    background-color: @line-light;
+}
+.ant-slider-disabled .ant-slider-track {
+    background-color: rgba(5, 105, 255, 0.5) !important;
+}
+.ant-slider-disabled .ant-slider-handle, .ant-slider-disabled .ant-slider-dot {
+    border-color: rgba(5, 105, 255, 0.5) !important;
+}
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+    border: solid 4px rgba(5, 105, 255, 0.5);
+}

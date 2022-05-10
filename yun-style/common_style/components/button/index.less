@@ -1,0 +1,142 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+// 常规按钮
+.ant-btn {
+    border-radius: @btn-radius;
+    color: @btn-color;
+    background-color: @fill-search;
+    border-color: @fill-search;
+}
+.ant-btn-lg,
+.ant-btn-sm {
+    border-radius: @btn-radius;
+}
+.ant-btn:hover,
+.ant-btn:focus {
+  color: @btn-color;
+  background-color: @btn-bg-color-hover;
+  border-color: @btn-bg-color-hover;
+}
+.ant-btn:active,
+.ant-btn.active {
+  color: @btn-color;
+  background-color: @btn-bg-color-click;
+  border-color: @btn-bg-color-click;
+}
+.ant-btn-disabled,
+.ant-btn.disabled,
+.ant-btn[disabled],
+.ant-btn-disabled:hover,
+.ant-btn.disabled:hover,
+.ant-btn[disabled]:hover,
+.ant-btn-disabled:focus,
+.ant-btn.disabled:focus,
+.ant-btn[disabled]:focus,
+.ant-btn-disabled:active,
+.ant-btn.disabled:active,
+.ant-btn[disabled]:active,
+.ant-btn-disabled.active,
+.ant-btn.disabled.active,
+.ant-btn[disabled].active {
+  color: @btn-not-color;
+  background-color: @btn-not-bg-color;
+  border-color: @btn-not-border-color;
+}
+.ant-btn-primary {
+    color: @btn-primary-color;
+    background-color: @btn-primary-bg-color;
+    border-color: @btn-primary-bg-color;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  color: @btn-primary-color;
+  background-color: @btn-primary-bg-color-bover;
+  border-color: @btn-primary-bg-color-bover;
+}
+.ant-btn-primary:active,
+.ant-btn-primary.active {
+  color: @btn-primary-color;
+  background-color: @btn-primary-bg-color-click;
+  border-color: @btn-primary-bg-color-click;
+}
+.ant-btn-primary-disabled,
+.ant-btn-primary.disabled,
+.ant-btn-primary[disabled],
+.ant-btn-primary-disabled:hover,
+.ant-btn-primary.disabled:hover,
+.ant-btn-primary[disabled]:hover,
+.ant-btn-primary-disabled:focus,
+.ant-btn-primary.disabled:focus,
+.ant-btn-primary[disabled]:focus,
+.ant-btn-primary-disabled:active,
+.ant-btn-primary.disabled:active,
+.ant-btn-primary[disabled]:active,
+.ant-btn-primary-disabled.active,
+.ant-btn-primary.disabled.active,
+.ant-btn-primary[disabled].active {
+  color: @btn-not-color;
+  background-color: @btn-not-bg-color;
+  border-color: @btn-not-border-color;
+}
+.ant-btn-group .ant-btn-primary:not(:first-child):not(:last-child) {
+  border-right-color: @btn-primary-bg-color-bover;
+  border-left-color: @btn-primary-bg-color-bover;
+}
+.ant-btn-group .ant-btn-primary:not(:first-child):not(:last-child):disabled {
+  border-color: @btn-not-border-color;
+}
+.ant-btn-group .ant-btn-primary:first-child:not(:last-child) {
+  border-right-color: @btn-primary-bg-color-bover;
+}
+.ant-btn-group .ant-btn-primary:first-child:not(:last-child)[disabled] {
+  border-right-color: @btn-not-border-color;
+}
+.ant-btn-group .ant-btn-primary:last-child:not(:first-child),
+.ant-btn-group .ant-btn-primary + .ant-btn-primary {
+  border-left-color: @btn-primary-bg-color-bover;
+}
+.ant-btn-group .ant-btn-primary:last-child:not(:first-child)[disabled],
+.ant-btn-group .ant-btn-primary + .ant-btn-primary[disabled] {
+  border-left-color: @btn-not-border-color;
+}
+.ant-btn-link {
+    color: @btn-primary-bg-color;
+    border-color: @transparent;
+    box-shadow: none;
+    background-color: @transparent;
+}
+.ant-btn-link:hover,
+.ant-btn-link:focus {
+  color: @btn-link-color-hover;
+  border-color: @transparent;
+  box-shadow: none;
+  background-color: @transparent;
+}
+.ant-btn-link:active,
+.ant-btn-link.active {
+  color: @btn-link-color-click;
+  border-color: @btn-link-bg-color-click;
+  box-shadow: none;
+  background-color: @btn-link-bg-color-click;
+}
+.ant-btn-link-disabled,
+.ant-btn-link.disabled,
+.ant-btn-link[disabled],
+.ant-btn-link-disabled:hover,
+.ant-btn-link.disabled:hover,
+.ant-btn-link[disabled]:hover,
+.ant-btn-link-disabled:focus,
+.ant-btn-link.disabled:focus,
+.ant-btn-link[disabled]:focus,
+.ant-btn-link-disabled:active,
+.ant-btn-link.disabled:active,
+.ant-btn-link[disabled]:active,
+.ant-btn-link-disabled.active,
+.ant-btn-link.disabled.active,
+.ant-btn-link[disabled].active {
+  color: @btn-link-not-color;
+  background-color: @transparent;
+  border-color: @transparent;
+}

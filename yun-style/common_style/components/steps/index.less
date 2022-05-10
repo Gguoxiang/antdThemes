@@ -1,0 +1,65 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-steps-item-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    font-size: @font-body;
+    line-height: 28px;
+    border: 1px solid @fill-search;
+    border-radius: 50%;
+    font-weight: @font-weight-middle;
+    color: @text-title;
+}
+.ant-steps-item-wait .ant-steps-item-icon {
+    background-color: @fill-search ;
+    border-color: @fill-search;
+}
+.ant-steps-item-tail::after {
+    background-color: @line-split;
+}
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-tail::after {
+    background-color: @line-split;
+}
+.ant-steps-item-process .ant-steps-item-icon {
+    background-color: @primary-color;
+    border-color: @primary-color;
+}
+.ant-steps-item-finish .ant-steps-item-icon {
+    background-color: @primary-bg;
+    border-color: @primary-bg;
+}
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+    color: @primary-color;
+}
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+    background-color: @primary-color;
+}
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title,
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+    color: @text-title;
+    font-size: @font-body;
+}
+.ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+    color: @text-body;
+}
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description,
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description,
+.ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description {
+    color: @text-secondary;
+}
+.ant-steps-item-error > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description,
+.ant-steps-item-error > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+    color: @error-color;
+}
+.ant-steps-item-error .ant-steps-item-icon {
+    background-color: @danger-light;
+    border-color: @danger-light;
+}
+.ant-steps-item-error .ant-steps-item-icon > .ant-steps-icon {
+    border-color: @error-color;
+}
+.ant-steps-icon .anticon {
+    font-size: 14px;
+}

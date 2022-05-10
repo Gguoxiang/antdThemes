@@ -1,0 +1,54 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-modal {
+    color: @text-body;
+    font-size: @font-body;
+    font-variant: tabular-nums;
+    line-height: @line-height;
+}
+.ant-modal-content {
+    background-color: @white;
+    border-radius: @card-radius;
+    // box-shadow: @small-shadow;
+}
+.ant-modal-title {
+    color: @text-title;
+    font-weight: @font-weight-big;
+    font-size: @font-title-small;
+    line-height: @line-height;
+}
+.ant-modal-body {
+    padding: 20px;
+    font-size: @font-body;
+    line-height: @line-height;
+}
+.ant-modal-mask {
+    background-color: @mask;
+}
+.ant-modal-header {
+    padding: 20px;
+    border-bottom: none;
+    border-radius: @card-radius @card-radius 0 0;
+}
+.ant-modal-footer {
+    border-top: none;
+    padding: 20px;
+    border-radius: 0 0 @card-radius @card-radius;
+}
+.ant-modal-root.modal-small .ant-form-item-label,
+.ant-modal-root.modal-middle .ant-form-item-label {
+    max-width: 110px;
+}
+.ant-modal-root.modal-big .ant-form-item-label {
+    max-width: 160px;
+}
+.ant-modal-root.modal-small .ant-form-item-control-wrapper {
+    width: 280px;
+}
+.ant-modal-root.modal-middle .ant-form-item-control-wrapper {
+    width: 400px;
+}
+.ant-modal-root.modal-big .ant-form-item-control-wrapper {
+    width: 600px;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>信息-大</title>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-2169.000000, -1432.000000)" id="信息-大">
+            <g transform="translate(2169.000000, 1432.000000)">
+                <circle id="椭圆形" fill="#E8F5FF" cx="25" cy="25" r="25"></circle>
+                <path d="M25,28 C26.1045695,28 27,28.8954305 27,30 C27,31.1045695 26.1045695,32 25,32 C23.8954305,32 23,31.1045695 23,30 C23,28.8954305 23.8954305,28 25,28 Z M25.025917,18 C25.8543441,18 26.525917,18.6715729 26.525917,19.5 L26.525917,25.5 C26.525917,26.3284271 25.8543441,27 25.025917,27 C24.1974899,27 23.525917,26.3284271 23.525917,25.5 L23.525917,19.5 C23.525917,18.6715729 24.1974899,18 25.025917,18 Z" id="形状结合" fill="#0569FF" fill-rule="nonzero" transform="translate(25.000000, 25.000000) scale(1, -1) translate(-25.000000, -25.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

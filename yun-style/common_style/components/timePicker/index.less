@@ -1,0 +1,112 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ant-time-picker-panel {
+    color: @text-color;
+    font-size: @font-size-base;
+}
+.ant-time-picker-panel-inner {
+    font-size: @font-size-base;
+    background-color: @white;
+    border-radius: @border-radius-base;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.ant-time-picker-panel-input::-moz-placeholder {
+    color: @text-prompt;
+}
+.ant-time-picker-panel-input:-ms-input-placeholder {
+    color: @text-prompt;
+}
+.ant-time-picker-panel-input::-webkit-input-placeholder {
+    color: @text-prompt;
+}
+.ant-time-picker-panel-input-wrap { 
+    padding: 7px 2px 7px 12px;
+    border: 1px solid @primary-color;
+    border-radius: @border-radius-base;
+    background-color: @primary-light;
+}
+.ant-time-picker-panel-input {
+    color: @text-title;
+    background-color: @transparent;
+}
+.ant-time-picker-panel-input-invalid {
+    border-color: @error-color;
+}
+.ant-time-picker-panel-select {
+    border-left: 1px solid @line-light;
+}
+.ant-time-picker-panel-select li:focus {
+    color: @primary-color;
+}
+.ant-time-picker-panel-select li:hover {
+    background: @primary-bg;
+}
+li.ant-time-picker-panel-select-option-selected {
+    color: @primary-color;
+    background: @primary-bg; 
+}
+li.ant-time-picker-panel-select-option-selected:hover {
+    color: @primary-color;
+    background: @primary-bg;
+}
+.ant-time-picker {
+    width: 242px;
+    color: @text-color;
+    font-size: @font-size-base;
+}
+.ant-time-picker-panel-select {
+    width: 80px;
+}
+.ant-time-picker-panel-select ul {
+    width: 80px;
+}
+.ant-time-picker-input {
+position: relative;
+display: inline-block;
+width: 100%;
+height: 32px;
+padding: 4px 11px;
+color: @text-title;
+font-size: @font-body;
+line-height: @line-height;
+background-color: @fill-form;
+background-image: none;
+border: 1px solid @fill-form;
+border-radius: @btn-radius;
+transition: all 0.3s;
+}
+.ant-time-picker-input::-moz-placeholder {
+color: @text-prompt;
+opacity: 1;
+}
+.ant-time-picker-input:-ms-input-placeholder {
+color: @text-prompt;
+}
+.ant-time-picker-input::-webkit-input-placeholder {
+color: @text-prompt;
+}
+.ant-time-picker-input:hover {
+border-color: @primary-color;
+}
+.ant-time-picker-input:focus {
+border-color: @primary-color;
+}
+.ant-time-picker-input-disabled {
+color: @text-prompt;
+background-color: @fill-form;
+}
+.ant-time-picker-input-disabled:hover {
+border-color: @primary-color;
+}
+.ant-time-picker-input[disabled] {
+color: @text-prompt;
+background-color: @fill-form;
+}
+.ant-time-picker-input[disabled]:hover {
+border-color: @primary-color;
+}

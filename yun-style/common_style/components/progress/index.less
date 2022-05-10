@@ -1,0 +1,45 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-progress-inner {
+    background-color: @line-light;
+}
+.ant-progress-success-bg, .ant-progress-bg {
+    background-color: @primary-color;
+}
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
+  stroke: @primary-color;
+}
+.ant-progress-success-bg {
+  background-color: @success-color;
+}
+.ant-progress-text {
+    color: @text-title;
+}
+.ant-progress-status-exception .ant-progress-bg {
+  background-color: @error-color;
+}
+.ant-progress-status-exception .ant-progress-text {
+  color: @error-color;
+}
+.ant-progress-status-exception .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
+  stroke: @error-color;
+}
+.ant-progress-status-success .ant-progress-bg {
+  background-color: @success-color;
+}
+.ant-progress-status-success .ant-progress-text {
+  color: @success-color;
+}
+.ant-progress-status-success .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
+  stroke: @success-color;
+}
+.ant-progress-circle .ant-progress-text {
+    color: @text-title;
+}
+.ant-progress-circle.ant-progress-status-exception .ant-progress-text {
+  color: @error-color;
+}
+.ant-progress-circle.ant-progress-status-success .ant-progress-text {
+  color: @success-color;
+}

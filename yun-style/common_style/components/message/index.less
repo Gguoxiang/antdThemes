@@ -1,0 +1,25 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-message {
+    font-size: @font-secondary;
+    font-family: @font-family;
+    font-weight: @font-weight-middle;
+    color: @text-title;
+}
+.ant-message-notice-content {
+  box-shadow: @small-shadow;
+}
+.ant-message-success .anticon {
+  color: @success-color;
+}
+.ant-message-error .anticon {
+  color: @error-color;
+}
+.ant-message-warning .anticon {
+  color: @warning-color;
+}
+.ant-message-info .anticon,
+.ant-message-loading .anticon {
+  color: @primary-color;
+}

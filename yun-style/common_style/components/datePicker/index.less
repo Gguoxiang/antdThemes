@@ -1,0 +1,235 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-calendar-picker-container {
+    color: @text-body;
+    font-size: @font-size-base;
+    font-family: @font-family;
+    background-color: @transparent;
+    border-radius: @card-radius;
+}
+.ant-calendar-column-header .ant-calendar-column-header-inner {
+    color: @text-body;
+}
+.ant-calendar-date {
+    color: @text-title;
+    font-size: @font-title-small;
+    font-weight: @font-weight-middle;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+}
+// .ant-calendar-picker:hover .ant-calendar-picker-icon {
+//   opacity: 0;
+// }
+.ant-calendar-picker:hover .ant-calendar-picker-clear + .ant-calendar-picker-icon {
+    opacity: 0;
+}
+.ant-calendar-last-month-cell .ant-calendar-date, .ant-calendar-next-month-btn-day .ant-calendar-date, .ant-calendar-last-month-cell .ant-calendar-date:hover, .ant-calendar-next-month-btn-day .ant-calendar-date:hover {
+    color: @text-prompt;
+}
+.ant-calendar-header .ant-calendar-century-select, .ant-calendar-header .ant-calendar-decade-select, .ant-calendar-header .ant-calendar-year-select, .ant-calendar-header .ant-calendar-month-select {
+    color: @text-title;
+    font-size: @font-title-small;
+    font-weight: @font-weight-middle;
+}
+.ant-calendar-header a:hover {
+    color: @primary-color;
+}
+.ant-calendar-header .ant-calendar-prev-century-btn, .ant-calendar-header .ant-calendar-next-century-btn, .ant-calendar-header .ant-calendar-prev-decade-btn, .ant-calendar-header .ant-calendar-next-decade-btn, .ant-calendar-header .ant-calendar-prev-month-btn, .ant-calendar-header .ant-calendar-next-month-btn, .ant-calendar-header .ant-calendar-prev-year-btn, .ant-calendar-header .ant-calendar-next-year-btn {
+    color: @text-title;
+    font-weight: @font-weight-middle;
+}
+.ant-calendar .ant-calendar-today-btn:only-child, .ant-calendar .ant-calendar-clear-btn:only-child {
+    font-size: @font-title-small;
+    color: @text-title;
+    font-weight: @font-weight-middle;
+}
+.ant-calendar .ant-calendar-today-btn:only-child:hover, .ant-calendar .ant-calendar-clear-btn:only-child:hover {
+    color: @primary-color;
+}
+.ant-calendar-header .ant-calendar-prev-month-btn::before, .ant-calendar-header .ant-calendar-prev-month-btn::after,
+.ant-calendar-header .ant-calendar-next-month-btn::before, .ant-calendar-header .ant-calendar-next-month-btn::after,
+.ant-calendar-header .ant-calendar-next-century-btn::before, .ant-calendar-header .ant-calendar-next-decade-btn::before, .ant-calendar-header .ant-calendar-next-year-btn::before, .ant-calendar-header .ant-calendar-next-century-btn::after, .ant-calendar-header .ant-calendar-next-decade-btn::after, .ant-calendar-header .ant-calendar-next-year-btn::after,
+.ant-calendar-header .ant-calendar-next-century-btn::before, .ant-calendar-header .ant-calendar-next-decade-btn::before, .ant-calendar-header .ant-calendar-next-year-btn::before, .ant-calendar-header .ant-calendar-next-century-btn::after, .ant-calendar-header .ant-calendar-next-decade-btn::after, .ant-calendar-header .ant-calendar-next-year-btn::after,
+.ant-calendar-header .ant-calendar-prev-century-btn::before, .ant-calendar-header .ant-calendar-prev-decade-btn::before, .ant-calendar-header .ant-calendar-prev-year-btn::before, .ant-calendar-header .ant-calendar-prev-century-btn::after, .ant-calendar-header .ant-calendar-prev-decade-btn::after, .ant-calendar-header .ant-calendar-prev-year-btn::after,
+.ant-calendar-header .ant-calendar-prev-century-btn::before, .ant-calendar-header .ant-calendar-prev-decade-btn::before, .ant-calendar-header .ant-calendar-prev-year-btn::before, .ant-calendar-header .ant-calendar-prev-century-btn::after, .ant-calendar-header .ant-calendar-prev-decade-btn::after, .ant-calendar-header .ant-calendar-prev-year-btn::after,
+.ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-decade-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-year-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-decade-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-year-btn::after,
+.ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-decade-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-year-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-decade-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-next-year-btn::after,
+.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-decade-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-year-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-decade-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-year-btn::after,
+.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-decade-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-year-btn::before, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-decade-btn::after, .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-year-btn::after,
+.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-decade-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-year-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-decade-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-year-btn::after,
+.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-decade-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-year-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-decade-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-year-btn::after,
+.ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-decade-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-year-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-decade-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-year-btn::after,
+.ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-decade-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-year-btn::before, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-decade-btn::after, .ant-calendar-month-panel-header .ant-calendar-month-panel-next-year-btn::after,
+.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-decade-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-year-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-decade-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-year-btn::after,
+.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-decade-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-year-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-decade-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-year-btn::after,
+.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-decade-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-year-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-decade-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-year-btn::after,
+.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-decade-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-year-btn::before, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-decade-btn::after, .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-year-btn::after {
+    border: 0 solid @text-title;
+    border-width: 2px 0 0 2px;
+}
+.ant-calendar-month-panel-selected-cell .ant-calendar-month-panel-month,
+.ant-calendar-year-panel-selected-cell .ant-calendar-year-panel-year {
+    border-radius: 14px;
+    background: @primary-color;
+    color: @white;
+}
+.ant-calendar-month-panel-cell .ant-calendar-month-panel-month:hover,
+.ant-calendar-year-panel-cell .ant-calendar-year-panel-year:hover {
+    border-radius: 14px;
+    background: @primary-color;
+    color: @white;
+}
+.ant-calendar-month-panel-month,
+.ant-calendar-year-panel-year {
+    border-radius: 14px;
+    color: @text-title;
+    font-size: @font-title-small;
+    font-weight:@font-weight-middle;
+}
+.ant-calendar-month-panel-header .ant-calendar-month-panel-century-select, .ant-calendar-month-panel-header .ant-calendar-month-panel-decade-select, .ant-calendar-month-panel-header .ant-calendar-month-panel-year-select, .ant-calendar-month-panel-header .ant-calendar-month-panel-month-select,
+.ant-calendar-year-panel-header .ant-calendar-year-panel-century-select, .ant-calendar-year-panel-header .ant-calendar-year-panel-decade-select, .ant-calendar-year-panel-header .ant-calendar-year-panel-year-select, .ant-calendar-year-panel-header .ant-calendar-year-panel-month-select {
+    color: @text-title;
+    font-size: @font-title-small;
+    font-weight:@font-weight-middle;
+}
+.ant-calendar-input {
+    color: @text-title;
+    font-size:  @font-body;
+    background: @transparent;
+}
+.ant-calendar-input-wrap {
+    background: @primary-light;
+    border: 1px solid rgba(5,105,255,1);
+    border-radius: @btn-radius;
+}
+.ant-calendar-date-panel {
+    border-radius: @card-radius;
+}
+.ant-calendar-range-right .ant-calendar-input-wrap {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: 0;
+}
+.ant-calendar-range-left .ant-calendar-input-wrap {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+}
+.ant-calendar-range .ant-calendar-input, .ant-calendar-range .ant-calendar-time-picker-input {
+    background: @transparent;
+    color: @text-title; 
+}
+.ant-calendar-range .ant-calendar-in-range-cell::before {
+    background: @primary-light;
+}
+.ant-calendar-range .ant-calendar-date-panel  .ant-calendar-selected-start-date {
+    position: relative;
+}
+.ant-calendar-date-panel  .ant-calendar-selected-end-date {
+    position: relative;
+}
+.ant-calendar-range .ant-calendar-date-panel  .ant-calendar-selected-start-date::before {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background: @primary-light;
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+}
+.ant-calendar-range .ant-calendar-date-panel  .ant-calendar-selected-end-date::before {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: @primary-light;
+    content: '';
+    display: block;
+    width: 32px;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+}
+.ant-calendar-range .ant-calendar-date-panel  .ant-calendar-selected-start-date .ant-calendar-date,
+.ant-calendar-range .ant-calendar-date-panel  .ant-calendar-selected-end-date .ant-calendar-date {
+    position: relative;
+    z-index: 10;
+}
+.ant-calendar-decade-panel-decade {
+    border-radius: 14px;
+    color: @text-title;
+    font-size:  @font-body;
+    font-weight:@font-weight-middle;
+}
+.ant-calendar-decade-panel-cell .ant-calendar-decade-panel-decade:hover {
+    border-radius: 14px;
+    background: @primary-color;
+    color: @white;
+}
+.ant-calendar-decade-panel-selected-cell .ant-calendar-decade-panel-decade {
+    background: @primary-color;
+}
+.ant-calendar-decade-panel-century {
+    color: @text-title;
+    font-size:  @font-body;
+    font-weight:@font-weight-middle;
+}
+.ant-calendar-today .ant-calendar-date:hover {
+    color: @white;
+}
+.ant-calendar-range .ant-calendar-selected-start-date .ant-calendar-date, .ant-calendar-range .ant-calendar-selected-end-date .ant-calendar-date,
+.ant-calendar-range .ant-calendar-selected-start-date .ant-calendar-date:hover, .ant-calendar-range .ant-calendar-selected-end-date .ant-calendar-date:hover {
+    background: @primary-color;
+}
+.ant-calendar-decade-panel,
+.ant-calendar-year-panel,
+.ant-calendar-month-panel {
+    z-index: 12;
+}
+.ant-calendar-picker-input.ant-input {
+    color: @text-title;
+    background-color: @fill-form;
+    border: 1px solid @fill-form;
+}
+.ant-calendar-picker-clear {
+    background-color: @fill-form;
+    font-size:  @font-body;
+}
+.ant-time-picker-input {
+    color: @text-title;
+}
+.ant-input {
+    border-radius: @btn-radius;
+}
+.ant-calendar-today .ant-calendar-date {
+    color: @primary-color;
+    border-color: @primary-color;
+}
+.ant-calendar-selected-day .ant-calendar-date {
+    border-radius: 50%;
+    background: @primary-color;
+    color: @white;
+}
+.ant-calendar-date:hover{
+    border-radius: 50%;
+    background: @primary-color;
+    color: @white;
+}
+.ant-calendar-picker-input.ant-input::-moz-placeholder {
+    color: @text-prompt;
+}
+.ant-calendar-picker-input.ant-input:-ms-input-placeholder {
+    color: @text-prompt;
+}
+.ant-calendar-picker-input.ant-input::-webkit-input-placeholder {
+    color: @text-prompt;
+}

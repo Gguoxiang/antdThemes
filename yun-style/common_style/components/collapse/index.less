@@ -1,0 +1,35 @@
+@import '../../yunwen_themes.less'; //皮肤样式定制变量
+@import '../../yunwen_style.less'; //antd组件样式定制变量
+
+.ant-collapse {
+    color: @text-body;
+    border: 1px solid @fill-form;
+    border-radius: @card-radius;
+    box-shadow: @big-shadow;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    color: @text-title;
+    font-size: @font-body;
+    font-weight: @font-weight-big;
+    background-color: @fill-form;
+    border: 1px solid @fill-form;
+}
+.ant-collapse-content > .ant-collapse-content-box {
+    color: @text-body;
+    font-size: @font-body;
+}
+.ant-collapse-content {
+    color: @text-title;
+    font-size: @font-body;
+    border-top: 1px solid @fill-form;
+}
+.ant-collapse > .ant-collapse-item {
+    border-bottom: 1px solid @line-split;
+}
+.ant-collapse > .ant-collapse-item:last-child, .ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+}
+.ant-collapse .ant-collapse-item-disabled > .ant-collapse-header, .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header > .arrow {
+    color: @text-prompt;
+}
