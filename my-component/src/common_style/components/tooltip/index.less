@@ -9,20 +9,29 @@
     max-height: 320px;
     overflow-y: auto;
     border-radius: @card-radius;
-    padding: 10px;
+    padding: 8px 10px;
     background-color: @tooltip-mask;
     &::-webkit-scrollbar-thumb {
-        background-color: @fill-button;
-        border-radius: 10px;
+        background-color: @scrollbar-bg-h;
+        border-radius: @small-radius;
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 1.5px;
+        background-clip: padding-box;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: @scrollbar-bg-h;
     }
     &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: @scrollbar-size;
+        height: @scrollbar-size;
     }
 }
 .ant-tooltip-inner {
-    font-size: @font-title-small;
+    font-size: @font-body;
+    min-height: unset;
     border-radius: @card-radius;
+    padding: 0;
     // background-color: @tooltip-mask;
     background-color: @transparent;
 }

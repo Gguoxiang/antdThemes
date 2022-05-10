@@ -12,6 +12,7 @@
   "dependencies": {
     "ant-design-vue": "^1.7.8",
     "babel-polyfill": "^6.26.0",
+    "svg-sprite-loader": "^6.0.11",
     "vue": "^2.5.11"
   },
   "browserslist": [
@@ -27,11 +28,14 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "less": "^2.7.3",
+    "less-loader": "^5.0.0",
+    "sass-resources-loader": "^2.2.5",
+    "style-resources-loader": "^1.5.0",
+    "vue-cli-plugin-style-resources-loader": "^0.1.5",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "less": "^2.7.3",
-    "less-loader": "^5.0.0",
     "webpack-dev-server": "^2.9.1"
   }
 }

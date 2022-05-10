@@ -4,6 +4,9 @@
 .ant-pagination {
     color: @text-body; 
 }
+.ant-pagination .anticon {
+    font-size: @font-secondary;
+}
 .ant-pagination-total-text {
     color: @text-body;
 }
@@ -34,5 +37,8 @@
     border-radius: @small-radius;
 }
 .ant-pagination-simple .ant-pagination-simple-pager input:hover {
-    border-color: @primary-color;
+    border-color: @primary-bg;
+}
+.ant-pagination-item-active:focus, .ant-pagination-item-active:hover {
+    border-color: @primary-bg;
 }

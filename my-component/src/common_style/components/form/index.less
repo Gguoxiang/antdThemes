@@ -28,14 +28,15 @@
     content: '';
 }
 .ant-form-item-control-wrapper {
-    width: 600px;
+    max-width: 600px;
 }
 // form表单校验错误色
 .ant-form-explain, .ant-form-extra {
     color: @text-body;
 }
 .has-error .ant-input, .has-error .ant-input:hover {
-    border-color: @danger-default;
+    background-color: @danger-light;
+    border-color: @danger-light;
 }
 .has-error .ant-input:focus {
     border-color: @danger-click;

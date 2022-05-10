@@ -20,6 +20,12 @@
     height: 32px;
     line-height: 30px;
 }
+// .ant-calendar-picker:hover .ant-calendar-picker-icon {
+//   opacity: 0;
+// }
+.ant-calendar-picker:hover .ant-calendar-picker-clear + .ant-calendar-picker-icon {
+    opacity: 0;
+}
 .ant-calendar-last-month-cell .ant-calendar-date, .ant-calendar-next-month-btn-day .ant-calendar-date, .ant-calendar-last-month-cell .ant-calendar-date:hover, .ant-calendar-next-month-btn-day .ant-calendar-date:hover {
     color: @text-prompt;
 }
@@ -92,10 +98,10 @@
 .ant-calendar-input {
     color: @text-title;
     font-size:  @font-body;
-    background: rgba(232,245,255,0.40);
+    background: @transparent;
 }
 .ant-calendar-input-wrap {
-    background: rgba(232,245,255,0.40);
+    background: @primary-light;
     border: 1px solid rgba(5,105,255,1);
     border-radius: @btn-radius;
 }
@@ -113,8 +119,8 @@
     border-right: 0;
 }
 .ant-calendar-range .ant-calendar-input, .ant-calendar-range .ant-calendar-time-picker-input {
-    background: rgba(232,245,255,0.40);
-    color: @text-title;
+    background: @transparent;
+    color: @text-title; 
 }
 .ant-calendar-range .ant-calendar-in-range-cell::before {
     background: @primary-light;

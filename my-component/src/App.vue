@@ -12,6 +12,37 @@
       </template>
     <div id="app">
       <div class="component">
+        <div class="name">图标</div>
+        <div class="item">
+          <div class="left">示例</div>
+          <div class="right">
+            <div>
+              <a-space>
+                <y-icon type="icon-youxiangshuangjiantou" size="16" class="custom-icon"/>
+                <y-icon type="icon-a-2022xinsexiaoyun-15" size="20" self class="custom-icon"/>
+                <y-icon type="icon-zuoxiangshuangjiantou" size="24" class="custom-icon"/>
+              </a-space>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">自由配置</div>
+          <div class="right">
+            <div>
+              <a-space direction="vertical">
+                <span style="display: flex"><span style="min-width:140px">图标名称：</span><a-input v-model="iconStyle.name"></a-input></span>
+                <span style="display: flex"><span style="min-width:140px">颜色：</span><a-input v-model="iconStyle.color"></a-input></span>
+                <span style="display: flex"><span style="min-width:140px">大小：</span><a-input v-model="iconStyle.size"></a-input></span>
+                <span style="display: flex"><span style="min-width:140px">鼠标小手：</span><a-switch v-model="iconStyle.cursor" /></span>
+                <span style="display: flex"><span style="min-width:140px">hover色：</span><a-input v-model="iconStyle.hover"></a-input></span>
+                <span style="display: flex"><span style="min-width:140px">多色图自身色：</span><a-switch v-model="iconStyle.self" /></span>
+                <span style="display: flex"><span style="min-width:140px">显示的图标：</span><y-icon :type="iconStyle.name" :color="iconStyle.color" :cursor="iconStyle.cursor" :self="iconStyle.self" :hover="iconStyle.hover" :size="iconStyle.size"/></span>
+              </a-space>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="component">
         <div class="name">按钮</div>
         <div class="item">
           <div class="left">确定按钮</div>
@@ -111,10 +142,11 @@
           <div class="left">基本样式</div>
           <div class="right">
             <a-space direction="vertical">
-              <a-alert message="Success Tips" type="success" show-icon />
-              <a-alert message="Informational Notes" type="info" show-icon />
-              <a-alert message="Warning" type="warning" show-icon />
-              <a-alert message="Error" type="error" show-icon />
+              <a-alert message="Success Tips" type="success" show-icon>
+              </a-alert>
+              <a-alert message="Informational Notes" type="info" show-icon></a-alert>
+              <a-alert message="Warning" type="warning" show-icon></a-alert>
+              <a-alert message="Error" type="error" show-icon></a-alert>
             </a-space>
           </div>
         </div>
@@ -128,44 +160,35 @@
                 type="success"
                 show-icon
               >
+                <template #icon><y-icon type="icon-wancheng-xiao" size="16" color="#04CB81" class="custom-icon"/></template>
               </a-alert>
               <a-alert
                 message="Informational Notes"
                 description="Additional description and informations about copywriting."
                 type="info"
                 show-icon
-              />
+              >
+                <template #icon><y-icon type="icon-xinxi-xiao" size="16" color="#0569FF" class="custom-icon"/></template>
+              </a-alert>
               <a-alert
                 message="Warning"
                 description="This is a warning notice about copywriting."
                 type="warning"
                 show-icon
-              />
+              >
+                <template #icon><y-icon type="icon-jingshi-xiao" size="16" color="#FF9B00" class="custom-icon"/></template>
+              </a-alert>
               <a-alert
                 message="Error"
                 description="This is an error message about copywriting."
                 type="error"
                 show-icon
-              />
+              >
+                <template #icon><y-icon type="icon-baocuo-xiao" size="16" color="#FF3131" class="custom-icon"/></template>
+              </a-alert>
             </a-space>
           </div>
           <div class="tip">注意：带描述的提示的图标都是线框类型的，这是antd组件源码逻辑，如要修改需要手动修改源码</div>
-        </div>
-      </div>
-      <div class="component">
-        <div class="name">头像</div>
-        <div class="item">
-          <div class="left">样式</div>
-          <div class="right">
-            <div>
-              <a-avatar>U</a-avatar>
-              <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-              <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">
-                U
-              </a-avatar>
-              <a-avatar style="backgroundColor:#87d068" icon="user" />
-            </div>
-          </div>
         </div>
       </div>
       <div class="component">
@@ -250,17 +273,32 @@
           <div class="left">日期选择器</div>
           <div class="right">
             <a-space direction="vertical">
-              <a-date-picker @change="onChange" />
-              <a-month-picker placeholder="请选择月份" @change="onChange" />
+              <a-date-picker :getCalendarContainer="(triggerNode) => triggerNode.parentNode" @change="onChange">
+                <template #suffixIcon>
+                  <y-icon type="icon-riqi" size="16" color="#5D6E7F" class="custom-icon"/>
+                </template>
+                <template #prevIcon>
+                  <y-icon type="icon-youjiantou" size="16" color="#5D6E7F" class="custom-icon"/>
+                </template>
+                <template #superNextIcon>
+                  <y-icon type="icon-zuojiantou" size="16" color="#5D6E7F" class="custom-icon"/>
+                </template>
+              </a-date-picker>
+              <a-month-picker placeholder="请选择月份" @change="onChange" >
+                <template #suffixIcon>
+                  <y-icon type="icon-riqi" size="16" color="#5D6E7F" class="custom-icon"/>
+                </template>
+              </a-month-picker>
               <a-range-picker @change="onChange" />
             </a-space>
           </div>
+          <div class="tip">注意：日期组件日期上面的左右箭头无法修改</div>
         </div>
       </div>
       <div class="component">
         <div class="name">卡片</div>
         <div class="item">
-          <div class="left">无边框</div>
+          <div class="left">无边框（推荐）</div>
           <div class="right">
             <a-space direction="vertical">
               <a-card title="Card title" :bordered="false">
@@ -272,34 +310,14 @@
           </div>
           <div class="tip">注意：antd卡片是默认有边框的，如果无边框需要传参</div>
         </div>
-        <div class="item">
-          <div class="left">有边框</div>
-          <div class="right">
-            <a-space direction="vertical">
-              <a-card title="Card title">
-                <p>Card content Card content Card content Card content Card content</p>
-                <p>Card content</p>
-                <p>Card content</p>
-              </a-card>
-            </a-space>
-          </div>
-        </div>
       </div>
-      <!-- <div class="component">
-        <div class="name">走马灯</div>
-        <div class="item">
-          <div class="left">样式</div>
-          <div class="right">
-            
-          </div>
-        </div>
-      </div> -->
       <div class="component">
         <div class="name">级联选择</div>
         <div class="item">
           <div class="left">样式</div>
           <div class="right">
-            <a-cascader :options="options" style="width: 300px" />
+            <a-cascader :options="options" style="width: 300px" >
+            </a-cascader>
           </div>
         </div>
       </div>
@@ -343,36 +361,144 @@
           <div class="tip">注意：UI提供的组件里没有折叠面板</div>
         </div>
       </div>
-      <!-- <div class="component">
-        <div class="name">日期选择器</div>
-        <div class="item">
-          <div class="left">竖线</div>
-          <div class="right">
-            
-          </div>
-        </div>
-      </div> -->
       <div class="component">
         <div class="name">抽屉Drawer</div>
         <div class="item">
           <div class="left">抽屉</div>
           <div class="right">
             <div>
-              <a-button type="primary" @click="showDrawer">
+              <a-button type="primary" @click="showDrawer2">
                 Open
               </a-button>
               <a-drawer
                 title="Basic Drawer"
                 placement="right"
                 :closable="false"
-                :visible="visible"
-                :width="680"
+                :visible="visible2"
+                :width="800"
                 :after-visible-change="afterVisibleChange"
-                @close="onClose"
+                @close="onClose2"
               >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <div class="form" style="width: 100%; max-width: 790px">
+                  <a-form :form="form" @submit="handleSubmit">
+                    <div class="formBox">
+                    <a-form-item v-bind="formItemLayout" label="E-mail">
+                      <a-input
+                        v-decorator="[
+                          'email',
+                          {
+                            rules: [
+                              {
+                                type: 'email',
+                                message: 'The input is not valid E-mail!',
+                              },
+                              {
+                                required: true,
+                                message: 'Please input your E-mail!',
+                              },
+                            ],
+                          },
+                        ]"
+                      />
+                    </a-form-item>
+                    <a-form-item v-bind="formItemLayout" label="Password" has-feedback>
+                      <a-input
+                        v-decorator="[
+                          'password',
+                          {
+                            rules: [
+                              {
+                                required: true,
+                                message: 'Please input your password!',
+                              },
+                              {
+                                validator: validateToNextPassword,
+                              },
+                            ],
+                          },
+                        ]"
+                        type="password"
+                      />
+                    </a-form-item>
+                    <a-form-item v-bind="formItemLayout" label="Confirm Password" has-feedback>
+                      <a-input
+                        v-decorator="[
+                          'confirm',
+                          {
+                            rules: [
+                              {
+                                required: true,
+                                message: 'Please confirm your password!',
+                              },
+                              {
+                                validator: compareToFirstPassword,
+                              },
+                            ],
+                          },
+                        ]"
+                        type="password"
+                        @blur="handleConfirmBlur"
+                      />
+                    </a-form-item>
+                    <a-form-item v-bind="formItemLayout">
+                      <span slot="label">
+                        <a-tooltip title="What do you want others to call you?">
+                          <a-icon type="question-circle-o" />
+                        </a-tooltip>
+                        Nickname
+                      </span>
+                      <a-input
+                        v-decorator="[
+                          'nickname',
+                          {
+                            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                          },
+                        ]"
+                      />
+                    </a-form-item>
+                    <a-form-item v-bind="formItemLayout" label="Habitual Residence Habitual Residence">
+                      <a-cascader
+                        v-decorator="[
+                          'residence',
+                          {
+                            initialValue: ['zhejiang', 'hangzhou', 'xihu'],
+                            rules: [
+                              { type: 'array', required: true, message: 'Please select your habitual residence!' },
+                            ],
+                          },
+                        ]"
+                        :options="residences"
+                        :getPopupContainer="(triggerNode) => triggerNode.parentNode"
+                      />
+                    </a-form-item>
+                    <a-form-item v-bind="formItemLayout" label="Phone Number">
+                      <a-input
+                        v-decorator="[
+                          'phone',
+                          {
+                            rules: [{ required: true, message: 'Please input your phone number!' }],
+                          },
+                        ]"
+                        style="width: 100%"
+                      >
+                        <a-select
+                          :getPopupContainer="(triggerNode) => triggerNode.parentNode"
+                          slot="addonBefore"
+                          v-decorator="['prefix', { initialValue: '86' }]"
+                          style="width: 70px"
+                        >
+                          <a-select-option value="86">
+                            +86
+                          </a-select-option>
+                          <a-select-option value="87">
+                            +87
+                          </a-select-option>
+                        </a-select>
+                      </a-input>
+                    </a-form-item>
+                    </div>
+                  </a-form>
+                </div>
                 <div
                   :style="{
                     position: 'absolute',
@@ -382,14 +508,13 @@
                     padding: '20px',
                     background: '#fff',
                     textAlign: 'right',
-                    borderTop: '1px solid #F1F2F5',
                     zIndex: 1,
                   }"
                 >
-                  <a-button :style="{ marginRight: '8px' }" @click="onClose">
+                  <a-button :style="{ marginRight: '8px' }" @click="onClose2">
                     取消
                   </a-button>
-                  <a-button type="primary" @click="onClose">
+                  <a-button type="primary" @click="onClose2">
                     确定
                   </a-button>
                 </div>
@@ -417,28 +542,6 @@
                 <a-menu-item key="3" disabled>
                   3rd menu item（disabled）
                 </a-menu-item>
-              </a-menu>
-            </a-dropdown>
-          </div>
-        </div>
-        <div class="item">
-          <div class="left">多级菜单</div>
-          <div class="right">
-            <a-dropdown>
-              <a class="ant-dropdown-link" @click="e => e.preventDefault()">
-                多级菜单 <a-icon type="down" />
-              </a>
-              <a-menu slot="overlay">
-                <a-menu-item>1st menu item</a-menu-item>
-                <a-menu-item>2nd menu item</a-menu-item>
-                <a-sub-menu key="test" title="sub menu">
-                  <a-menu-item>3rd menu item</a-menu-item>
-                  <a-menu-item>4th menu item</a-menu-item>
-                </a-sub-menu>
-                <a-sub-menu title="disabled sub menu" disabled>
-                  <a-menu-item>5d menu item</a-menu-item>
-                  <a-menu-item>6th menu item</a-menu-item>
-                </a-sub-menu>
               </a-menu>
             </a-dropdown>
           </div>
@@ -472,7 +575,7 @@
         <div class="item">
           <div class="left">下拉框</div>
           <div class="right">
-            <a-select :style="style" :options="[]" />
+            <a-select :getPopupContainer="(triggerNode) => triggerNode.parentNode" :style="style" :options="[]" />
           </div>
         </div>
         <div class="item">
@@ -485,6 +588,30 @@
           <div class="left">表格</div>
           <div class="right" style="width: 60%">
              <a-table style="margin-top: 8px" :columns="columns" :data-source="[]" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">大页面的暂无数据</div>
+          <div class="right" style="width: 60%;">
+            <div style="text-align: center">
+              <img
+                width="140px"
+                src="./assets/noData2.png"
+              />
+              <p style="font-size: 14px; color: #B5BECB; letter-spacing: 1px;">暂无数据</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">创建空页面</div>
+          <div class="right" style="width: 60%;">
+            <div style="text-align: center">
+              <img
+                width="140px"
+                src="./assets/noData1.png"
+              />
+              <p style="font-size: 14px; color: #B5BECB; letter-spacing: 1px;">开始你的XXX之旅吧~</p>
+            </div>
           </div>
         </div>
       </div>
@@ -569,6 +696,102 @@
                   ]"
                 />
               </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
               <a-form-item v-bind="formItemLayout" label="Habitual Residence Habitual Residence">
                 <a-cascader
                   v-decorator="[
@@ -581,6 +804,7 @@
                     },
                   ]"
                   :options="residences"
+                  :getPopupContainer="(triggerNode) => triggerNode.parentNode"
                 />
               </a-form-item>
               <a-form-item v-bind="formItemLayout" label="Phone Number">
@@ -594,6 +818,7 @@
                   style="width: 100%"
                 >
                   <a-select
+                    :getPopupContainer="(triggerNode) => triggerNode.parentNode"
                     slot="addonBefore"
                     v-decorator="['prefix', { initialValue: '86' }]"
                     style="width: 70px"
@@ -607,19 +832,149 @@
                   </a-select>
                 </a-input>
               </a-form-item>
-              <a-form-item v-bind="formItemLayout" label="Website">
-                <a-auto-complete
-                  v-decorator="['website', { rules: [{ required: true, message: 'Please input website!' }] }]"
-                  placeholder="website"
-                  @change="handleWebsiteChange"
-                >
-                  <template slot="dataSource">
-                    <a-select-option v-for="website in autoCompleteResult" :key="website">
-                      {{ website }}
-                    </a-select-option>
-                  </template>
-                  <a-input />
-                </a-auto-complete>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item v-bind="formItemLayout">
+                <span slot="label">
+                  <a-tooltip title="What do you want others to call you?">
+                    <a-icon type="question-circle-o" />
+                  </a-tooltip>
+                  Nickname
+                </span>
+                <a-input
+                  v-decorator="[
+                    'nickname',
+                    {
+                      rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    },
+                  ]"
+                />
               </a-form-item>
               </div>
               <template v-bind="tailFormItemLayout">
@@ -631,7 +986,7 @@
               </template>
             </a-form>
           </div>
-          <div class="tip">注意：<br />1.表单的样式大多自由调整，根据col占位，需要具体项目具体调整<br />2.底部按钮都是另外写，非form组件包含，所以项目自主调整<br />3.表单除底部按钮的内容要用元素单独包裹一层，以在内容过多滚动时不滚动底部按钮</div>
+          <div class="tip">注意：<br />1.表单的样式大多自由调整，根据col占位，需要具体项目具体调整<br />2.底部按钮都是另外写，非form组件包含，所以项目自主调整<br />3.表单除底部按钮的内容要用元素单独包裹一层，以在内容过多滚动时不滚动底部按钮<br />4.带下拉框的需要加上属性:getPopupContainer="(triggerNode) => triggerNode.parentNode"，不然下拉框不跟随滚动条滚动<br />5.特别需要注意的是，滚动高度最好要超过下拉框下拉高度的两倍，不然下拉的起始位置异常</div>
         </div>
         <div class="item">
           <div class="left">FormModel 表单</div>
@@ -655,7 +1010,7 @@
                 />
               </a-form-model-item>
               <a-form-model-item label="Activity zone" prop="region">
-                <a-select v-model="form1.region" placeholder="please select your zone">
+                <a-select :getPopupContainer="(triggerNode) => triggerNode.parentNode" v-model="form1.region" placeholder="please select your zone" allowClear>
                   <a-select-option value="shanghai">
                     Zone one
                   </a-select-option>
@@ -670,8 +1025,39 @@
                   show-time
                   type="date"
                   placeholder="Pick a date"
-                  style="width: 100%;"
-                />
+                  :getCalendarContainer="trigger => trigger.parentNode"
+                >
+                  <template #suffixIcon>
+                    <y-icon type="icon-riqi" size="16" color="#5D6E7F" class="custom-icon"/>
+                  </template>
+                </a-date-picker>
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
+              </a-form-model-item>
+              <a-form-model-item label="Instant delivery" prop="delivery">
+                <a-switch v-model="form1.delivery" />
               </a-form-model-item>
               <a-form-model-item label="Instant delivery" prop="delivery">
                 <a-switch v-model="form1.delivery" />
@@ -737,11 +1123,22 @@
         <div class="item">
           <div class="left">搜索</div>
           <div class="right" style="width: 300px">
-            <a-input-search placeholder="input search text" />
+            <a-input-search placeholder="input search text" >
+              <template #suffix>
+                <y-icon type="icon-sousuo" size="16" color="#5D6E7F" cursor/>
+              </template>
+            </a-input-search>
             <br /><br />
-            <a-input-search disabled placeholder="input search text" />
+            <a-input-search disabled placeholder="input search text" >
+              <template #suffix>
+                <y-icon type="icon-sousuo" size="16" color="#5D6E7F"/>
+              </template>
+            </a-input-search>
             <br /><br />
-            <a-input-search placeholder="input search text" enter-button />
+            <a-input-group compact>
+              <a-input style="width: calc(100% - 48px)" />
+              <a-button type="primary"><y-icon type="icon-sousuo" size="16" color="#fff" cursor/></a-button>
+            </a-input-group>
           </div>
         </div>
         <div class="item">
@@ -785,91 +1182,21 @@
               :data-source="tableData"
               :row-selection="rowSelection"
               :expanded-row-keys.sync="expandedRowKeys"
+              :pagination="false"
             >
               <span slot="operation" slot-scope="v,record">
                 <a-space>
                   <a-tooltip title="编辑">
-                    <a-icon type="edit" />
+                    <y-icon type="icon-bianji" size="16" cursor/>
                   </a-tooltip>
                   <a-tooltip title="删除">
-                    <a-icon type="delete" />
+                    <y-icon type="icon-shanchu" size="16" cursor/>
                   </a-tooltip>
                 </a-space>
               </span>
             </a-table>
           </div>
-        </div>
-      </div>
-      <div class="component">
-        <div class="name">菜单</div>
-        <div class="item">
-          <div class="left">菜单</div>
-          <div class="right">
-            <div style="width: 256px">
-              <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
-                <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
-              </a-button>
-              <!-- <a-switch
-                default-checked
-                checked-children="dark"
-                un-checked-children="light"
-                @change="changeTheme"
-              /> -->
-              <a-menu
-                :default-selected-keys="['1']"
-                :default-open-keys="['sub1']"
-                mode="inline"
-                :theme="theme"
-                :inline-collapsed="collapsed"
-              >
-                <a-menu-item key="1">
-                  <a-icon type="pie-chart" />
-                  <span>Option 1</span>
-                </a-menu-item>
-                <a-menu-item key="2">
-                  <a-icon type="desktop" />
-                  <span>Option 2</span>
-                </a-menu-item>
-                <a-menu-item key="3">
-                  <a-icon type="inbox" />
-                  <span>Option 3</span>
-                </a-menu-item>
-                <a-sub-menu key="sub1">
-                  <span slot="title"><a-icon type="mail" /><span>Navigation One</span></span>
-                  <a-menu-item key="5">
-                    Option 5
-                  </a-menu-item>
-                  <a-menu-item key="6">
-                    Option 6
-                  </a-menu-item>
-                  <a-menu-item key="7">
-                    Option 7
-                  </a-menu-item>
-                  <a-menu-item key="8">
-                    Option 8
-                  </a-menu-item>
-                </a-sub-menu>
-                <a-sub-menu key="sub2">
-                  <span slot="title"><a-icon type="appstore" /><span>Navigation Two</span></span>
-                  <a-menu-item key="9">
-                    Option 9
-                  </a-menu-item>
-                  <a-menu-item key="10">
-                    Option 10
-                  </a-menu-item>
-                  <a-sub-menu key="sub3" title="Submenu">
-                    <a-menu-item key="11">
-                      Option 11
-                    </a-menu-item>
-                    <a-menu-item key="12">
-                      Option 12
-                    </a-menu-item>
-                  </a-sub-menu>
-                </a-sub-menu>
-              </a-menu>
-            </div>
-          </div>
-          <div class="tip">注意：管理端系统菜单与antd组件菜单样式有差异，具体需要在项目中修改</div>
+          <div class="tip">注意：表格中的操作栏图标是人工写的，需要在项目中引入新图标组件后修改</div>
         </div>
       </div>
       <div class="component">
@@ -903,12 +1230,151 @@
           <div class="left">对话框</div>
           <div class="right">
             <a-button type="primary" @click="showModal">
-              Open Modal
+              Open Modal small
             </a-button>
-            <a-modal v-model="visible1" title="Basic Modal" @ok="handleOk">
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+            <a-button type="primary" @click="showModal1">
+              Open Modal middle
+            </a-button>
+            <a-button type="primary" @click="showModal2">
+              Open Modal big
+            </a-button>
+            <a-modal v-model="visible1" title="Basic Modal" class="modal-small" @ok="handleOk">
+              <div class="form" style="width: 100%; max-width: 410px">
+                <a-form :form="form" @submit="handleSubmit">
+                  <div class="formBox">
+                  <a-form-item v-bind="formItemLayout" label="E-mail">
+                    <a-input
+                      v-decorator="[
+                        'email',
+                        {
+                          rules: [
+                            {
+                              type: 'email',
+                              message: 'The input is not valid E-mail!',
+                            },
+                            {
+                              required: true,
+                              message: 'Please input your E-mail!',
+                            },
+                          ],
+                        },
+                      ]"
+                    />
+                  </a-form-item>
+                  <a-form-item v-bind="formItemLayout" label="Password" has-feedback>
+                    <a-input
+                      v-decorator="[
+                        'password',
+                        {
+                          rules: [
+                            {
+                              required: true,
+                              message: 'Please input your password!',
+                            },
+                            {
+                              validator: validateToNextPassword,
+                            },
+                          ],
+                        },
+                      ]"
+                      type="password"
+                    />
+                  </a-form-item>
+                  </div>
+                </a-form>
+              </div>
+            </a-modal>
+            <a-modal v-model="visible11" title="Basic Modal" width="680px" class="modal-middle" @ok="handleOk1">
+              <div class="form" style="width: 100%; max-width: 530px">
+                <a-form :form="form" @submit="handleSubmit">
+                  <div class="formBox">
+                  <a-form-item v-bind="formItemLayout" label="E-mail">
+                    <a-input
+                      v-decorator="[
+                        'email',
+                        {
+                          rules: [
+                            {
+                              type: 'email',
+                              message: 'The input is not valid E-mail!',
+                            },
+                            {
+                              required: true,
+                              message: 'Please input your E-mail!',
+                            },
+                          ],
+                        },
+                      ]"
+                    />
+                  </a-form-item>
+                  <a-form-item v-bind="formItemLayout" label="Password" has-feedback>
+                    <a-input
+                      v-decorator="[
+                        'password',
+                        {
+                          rules: [
+                            {
+                              required: true,
+                              message: 'Please input your password!',
+                            },
+                            {
+                              validator: validateToNextPassword,
+                            },
+                          ],
+                        },
+                      ]"
+                      type="password"
+                    />
+                  </a-form-item>
+                  </div>
+                </a-form>
+              </div>
+            </a-modal>
+            <a-modal v-model="visible12" title="Basic Modal" width="1040px" class="modal-big" @ok="handleOk2">
+              <div class="form" style="width: 100%; max-width: 780px">
+                <a-form :form="form" @submit="handleSubmit">
+                  <div class="formBox">
+                  <a-form-item v-bind="formItemLayout" label="E-mail">
+                    <a-input
+                      v-decorator="[
+                        'email',
+                        {
+                          rules: [
+                            {
+                              type: 'email',
+                              message: 'The input is not valid E-mail!',
+                            },
+                            {
+                              required: true,
+                              message: 'Please input your E-mail!',
+                            },
+                          ],
+                        },
+                      ]"
+                    />
+                  </a-form-item>
+                  <a-form-item v-bind="formItemLayout" label="Password" has-feedback>
+                    <a-input
+                      v-decorator="[
+                        'password',
+                        {
+                          rules: [
+                            {
+                              required: true,
+                              message: 'Please input your password!',
+                            },
+                            {
+                              validator: validateToNextPassword,
+                            },
+                          ],
+                        },
+                      ]"
+                      type="password"
+                    />
+                  </a-form-item>
+                  </div>
+                </a-form>
+              </div>
             </a-modal>
           </div>
         </div>
@@ -932,7 +1398,7 @@
                 Error
               </a-button>
             </a-space>
-            <div class="tip">注意：通知提醒框成功、失败、提示、警告的图标都是默认图片，并且是默认线框的图标，修改需要改源码逻辑，可项目中做定制调整</div>
+            <div class="tip">注意：通知提醒框成功、失败、提示、警告的图标都是默认图片，并且是默认线框的图标，修改需要改源码逻辑，可项目中做定制调整,无法更换图标</div>
           </div>
         </div>
       </div>
@@ -1003,7 +1469,7 @@
               <a-progress :percent="50" :show-info="false" />
             </div>
           </div>
-          <div class="tip">注意：进度条的高度无法修改，需要修改源码</div>
+          <div class="tip">注意：进度条的高度无法修改，需要修改源码,图标无法更换</div>
         </div>
       </div>
       <div class="component">
@@ -1097,6 +1563,9 @@
           <div class="left">提示</div>
           <div class="right">
             <a-result title="Your operation has been executed">
+              <template #icon>
+                <y-icon type="icon-xinxi-da" size="50" self/>
+              </template>
               <template #extra>
                 <a-button key="console" type="primary">
                   Go Console
@@ -1110,36 +1579,45 @@
           <div class="left">成功</div>
           <div class="right">
             <a-result status="success" title="Your operation has been executed">
-            <template #extra>
-              <a-button key="console" type="primary">
-                Go Console
-              </a-button>
-            </template>
-          </a-result>
+              <template #icon>
+                <y-icon type="icon-wancheng-da" size="50" self/>
+              </template>
+              <template #extra>
+                <a-button key="console" type="primary">
+                  Go Console
+                </a-button>
+              </template>
+            </a-result>
           </div>
         </div>
         <div class="item">
           <div class="left">警告</div>
           <div class="right">
             <a-result status="warning" title="Your operation has been executed">
-            <template #extra>
-              <a-button key="console" type="primary">
-                Go Console
-              </a-button>
-            </template>
-          </a-result>
+              <template #icon>
+                <y-icon type="icon-jingshi-da" size="50" self/>
+              </template>
+              <template #extra>
+                <a-button key="console" type="primary">
+                  Go Console
+                </a-button>
+              </template>
+            </a-result>
           </div>
         </div>
         <div class="item">
           <div class="left">错误</div>
           <div class="right">
             <a-result status="error" title="Your operation has been executed">
-            <template #extra>
-              <a-button key="console" type="primary">
-                Go Console
-              </a-button>
-            </template>
-          </a-result>
+              <template #icon>
+                <y-icon type="icon-baocuo-da" size="50" self/>
+              </template>
+              <template #extra>
+                <a-button key="console" type="primary">
+                  Go Console
+                </a-button>
+              </template>
+            </a-result>
           </div>
         </div>
       </div>
@@ -1148,7 +1626,7 @@
         <div class="item">
           <div class="left">基本用法</div>
           <div class="right">
-            <a-select style="width: 300px" placeholder="请选择">
+            <a-select :getPopupContainer="(triggerNode) => triggerNode.parentNode" style="width: 300px" placeholder="请选择">
               <a-select-option value="jack">
                 Jack
               </a-select-option>
@@ -1162,7 +1640,7 @@
                 yiminghe
               </a-select-option>
             </a-select>
-            <a-select default-value="lucy" style="width: 300px">
+            <a-select :getPopupContainer="(triggerNode) => triggerNode.parentNode" default-value="lucy" style="width: 300px">
               <a-select-option value="jack">
                 Jack
               </a-select-option>
@@ -1177,11 +1655,12 @@
               </a-select-option>
             </a-select>
           </div>
+          <div class="tip">注意：下拉框右侧的上下箭头图标无法修改</div>
         </div>
         <div class="item">
           <div class="left">分组</div>
           <div class="right">
-            <a-select default-value="lucy" style="width: 300px">
+            <a-select :getPopupContainer="(triggerNode) => triggerNode.parentNode" default-value="lucy" style="width: 300px">
               <a-select-opt-group>
                 <span slot="label"><a-icon type="user" />Manager</span>
                 <a-select-option value="jack">
@@ -1207,6 +1686,7 @@
               :default-value="['a1', 'b2']"
               style="width: 300px"
               placeholder="Please select"
+              :getPopupContainer="(triggerNode) => triggerNode.parentNode"
             >
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
@@ -1223,6 +1703,7 @@
               option-filter-prop="children"
               style="width: 300px"
               :filter-option="filterOption"
+              :getPopupContainer="(triggerNode) => triggerNode.parentNode"
             >
               <a-select-option value="jack">
                 Jack
@@ -1288,7 +1769,7 @@
               </a-steps>
             </div>
           </div>
-          <div class="tip">注意：描述的字体颜色等无参考</div>
+          <div class="tip">注意：描述的字体颜色等无参考,图标无法更换，是通过边框写的，加圆角有点怪</div>
         </div>
         <div class="item">
           <div class="left">描述在下</div>
@@ -1442,15 +1923,33 @@
           </div>
         </div>
       </div>
-      <!-- <div class="component">
-        <div class="name">时间选择器</div>
+      <div class="component">
+        <div class="name">滚动条</div>
         <div class="item">
-          <div class="left">竖线</div>
+          <div class="left">白色背景下</div>
           <div class="right">
-            
+            <div class="scroll scroll-white">
+              白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下白色背景下
+            </div>
           </div>
         </div>
-      </div> -->
+        <div class="item">
+          <div class="left">浅色背景下</div>
+          <div class="right">
+            <div class="scroll scroll-light">
+              浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下浅色背景下
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">深色色背景下</div>
+          <div class="right">
+            <div class="scroll scroll-black">
+              深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下深色色背景下
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="component">
         <div class="name">文字气泡</div>
         <div class="item">
@@ -1459,7 +1958,7 @@
             <a-space>
               <a-tooltip>
                 <template slot="title">
-                  prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt textprompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text prompt text
+                  这是短的悬浮提示
                 </template>
                 Tooltip will show when mouse enter.
               </a-tooltip>
@@ -1479,10 +1978,7 @@
         <div class="item">
           <div class="left">图形</div>
           <div class="right">
-            <a-tree :tree-data="treeData" show-icon default-expand-all :default-selected-keys="['0-0-0']">
-              <!-- <a-icon slot="switcherIcon" type="down" />
-              <a-icon slot="smile" type="smile-o" /> -->
-            </a-tree>
+            <a-tree :tree-data="treeData" show-icon default-expand-all :default-selected-keys="['0-0-0']"></a-tree>
           </div>
         </div>
         <div class="item">
@@ -1541,12 +2037,17 @@
             <a-upload
               action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
               :default-file-list="defaultFileList"
-              :show-upload-list="true"
+              :show-upload-list="false"
             >
-              <a-button type="primary"> <a-icon type="upload" /> 点击上传 </a-button>
+              <template #removeIcon>
+                <y-icon type="icon-shanchu" size="16"/>
+              </template>
+              <a-button type="primary">
+                点击上传 
+              </a-button>
             </a-upload>
           </div>
-          <div class="tip">注意：上传组件限制，基础组件无法预览、重新上传等，样式修改局限性较大，只能修改一些颜色，字体等样式</div>
+          <div class="tip">注意：上传组件限制，基础组件无法预览、重新上传等，样式修改局限性较大，只能修改一些颜色，字体等样式, 删除图标外部无法修改，只有修改源码或者升级antd到3.0才可以修改,上传列表的样式需要另外新写</div>
         </div>
         <div class="item">
           <div class="left">图片上传</div>
@@ -1554,9 +2055,8 @@
             <a-upload
               action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
               list-type="picture"
-              :default-file-list="fileList"
             >
-              <a-button type="primary"> <a-icon type="upload" /> 点击上传 </a-button>
+              <a-button type="primary"> <y-icon type="icon-shangchuan" size="16" style="margin-right: 4px" color="#fff"/></a-button>
             </a-upload>
           </div>
         </div>
@@ -1567,15 +2067,11 @@
               <a-upload
                 action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 list-type="picture-card"
-                :file-list="fileList1"
                 @preview="handlePreview"
                 @change="handleChange"
               >
                 <div v-if="fileList.length < 8">
                   <a-icon type="plus" />
-                  <!-- <div class="ant-upload-text">
-                    Upload
-                  </div> -->
                 </div>
               </a-upload>
               <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
@@ -1894,8 +2390,19 @@ export default {
     return {
       zh_CN,
       emptyImg,
+      iconStyle: {
+        name: 'icon-gouxuan1',
+        color: '#5D6E7F',
+        size: '16',
+        cursor: false,
+        self: false,
+        hover: 'red'
+      },
       visible: false,
       visible1: false,
+      visible2: false,
+      visible11: false,
+      visible12: false,
       open: false,
       text: `A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.`,
       activeKey: ['1'],
@@ -2105,12 +2612,19 @@ export default {
     this.form = this.$form.createForm(this, { name: 'register' });
   },
   methods: {
-    showModal() {
-      this.visible = true;
+    showModal1() {
+      this.visible11 = true;
     },
-    handleOk(e) {
+    handleOk1(e) {
       console.log(e);
-      this.visible = false;
+      this.visible11 = false;
+    },
+    showModal2() {
+      this.visible12 = true;
+    },
+    handleOk2(e) {
+      console.log(e);
+      this.visible12 = false;
     },
     onChange(date, dateString) {
       console.log(date, dateString);
@@ -2125,8 +2639,14 @@ export default {
     showDrawer() {
       this.visible = true;
     },
+    showDrawer2() {
+      this.visible2 = true;
+    },
     onClose() {
       this.visible = false;
+    },
+    onClose2() {
+      this.visible2 = false;
     },
     handleSubmit(e) {
       e.preventDefault();
@@ -2207,6 +2727,40 @@ export default {
       this.visible1 = false;
     },
     openNotificationWithIcon(type) {
+      // switch(type) {
+      //   case 'success':
+      //     this.$notification[type]({
+      //       message: 'Notification Title',
+      //       description:
+      //         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      //       icon: <y-icon type="SucessCircle" size="50" color="#04CB81"/>,
+      //     });
+      //     break
+      //   case 'info':
+      //     this.$notification.open({
+      //       message: 'Notification Title',
+      //       description:
+      //         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      //       icon: <y-icon type="InfoCircle" size="50" color="#0569FF"/>,
+      //     });
+      //     break
+      //   case 'warning':
+      //     this.$notification.open({
+      //       message: 'Notification Title',
+      //       description:
+      //         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      //       icon: <y-icon type="WarningCircle" size="50" color="#FF9B00"/>,
+      //     });
+      //     break
+      //   case 'error':
+      //     this.$notification.open({
+      //       message: 'Notification Title',
+      //       description:
+      //         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      //       icon: <y-icon type="ErrorCircle" size="50" color="#FF3131"/>,
+      //     });
+      //     break
+      // }
       this.$notification[type]({
         message: 'Notification Title',
         description:
@@ -2249,9 +2803,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+// @import './common_style/yunwen_themes.less';
+// @import './common_style/yunwen_style.less';
 #app {
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue','Microsoft YaHei',  Helvetica, Arial, sans-serif;
+  font-family: @font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
@@ -2272,6 +2828,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: @text-color;
 }
 .item {
   display: flex;
@@ -2284,26 +2841,77 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  // color: @primary-hover;
 }
 .right {
   /* width: 800px; */
   padding-top: 12px;
   border-top: 1px dashed #EDF0F3;
 }
+.scroll {
+  width: 300px;
+  height: 180px;
+  padding: 0 20px;
+  color: @text-body;
+  border-radius: @card-radius;
+  overflow-y: auto;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: @scrollbar-bg;
+  border-radius: @small-radius;
+  border-style: dashed;
+            border-color: transparent;
+            border-width: 1.5px;
+            background-clip: padding-box;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg;
+}
+.scroll::-webkit-scrollbar {
+  width: @scrollbar-size;
+  height: @scrollbar-size;
+}
+.scroll-light {
+  color: @text-body;
+  background: @fill-background;
+}
+.scroll-light::-webkit-scrollbar-thumb {
+  background-color: @scrollbar-bg-l;
+}
+.scroll-light::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg-l;
+}
+.scroll-black {
+  color: @white;
+  background: @tooltip-mask;
+}
+.scroll-black::-webkit-scrollbar-thumb {
+  background-color: @scrollbar-bg-h;
+}
+.scroll-black::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg-h;
+}
 .right.right {
   border-left: 1px dashed #EDF0F3;
 }
 .formBox {
-  max-height: 360px;
+  max-height: 780px;
   overflow-y: auto;
 }
 .formBox::-webkit-scrollbar-thumb {
-  background-color: #E8ECF0;
-  border-radius: 10px;
+  background-color: @scrollbar-bg;
+  border-radius: @small-radius;
+  border-style: dashed;
+            border-color: transparent;
+            border-width: 1.5px;
+            background-clip: padding-box;
+}
+.formBox::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg;
 }
 .formBox::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: @scrollbar-size;
+  height: @scrollbar-size;
 }
 .tip {
   padding: 20px;

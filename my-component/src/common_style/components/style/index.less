@@ -64,6 +64,21 @@ mark {
 html {
   --antd-wave-shadow-color: @primary-color;
 }
+.scroll::-webkit-scrollbar-thumb {
+  background-color: @scrollbar-bg;
+  border-radius: @small-radius;
+  border-style: dashed;
+            border-color: transparent;
+            border-width: 1px;
+            background-clip: padding-box;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: @scrollbar-bg;
+}
+.scroll::-webkit-scrollbar {
+  width: @scrollbar-size;
+  height: @scrollbar-size;
+}
 [ant-click-animating-without-extra-node='true']::after,
 .ant-click-animating-node {
   position: absolute;

@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -17,13 +19,20 @@ module.exports = {
           'css-loader',
           'less-loader'
         ],
-      },      {
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
+            less: ['vue-style-loader', 'css-loader', 'less-loader', {
+              loader: 'sass-resources-loader',
+              options: {resources: [
+                path.resolve(__dirname, './src/common_style/yunwen_themes.less'),
+                path.resolve(__dirname, './src/common_style/yunwen_style.less'),
+              ]}
+            }]
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -34,13 +43,22 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
+        exclude: [resolve('src/common_style/icons')],
         options: {
           name: '[name].[ext]?[hash]'
         }
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        test: /\.(eot|ttf|woff|woff2)(\?\S*)?$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/common_style/icons')],
+        options: {
+          symbolId: '[name]'
+        }
       }
     ]
   },
@@ -53,7 +71,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    host: '0.0.0.0'
   },
   performance: {
     hints: false
@@ -77,7 +96,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
+      minimize: true,
     })
   ])
 }

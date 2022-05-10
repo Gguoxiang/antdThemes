@@ -8,8 +8,23 @@
     background-color: @fill-form !important;
     border: 1px solid @fill-form;
 }
+.ant-cascader-picker .anticon {
+    font-size: @font-secondary;
+}
+.ant-cascader-picker-arrow {
+    color: @text-body;
+}
 .ant-cascader-menus {
-    box-shadow: 0px 4px 16px 0px rgba(194, 207, 229, 0.5);
+    box-shadow: @small-shadow;
+}
+.ant-cascader-menus .anticon {
+    font-size: @font-secondary;
+}
+// .ant-cascader-picker:hover .ant-cascader-picker-arrow {
+//     opacity: 0;
+// }
+.ant-cascader-picker:hover .ant-cascader-picker-clear + .ant-cascader-picker-arrow {
+    opacity: 0;
 }
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled), .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
     background-color: @primary-bg;
@@ -41,4 +56,8 @@
 }
 .ant-cascader-menu:last-child {
     border-radius: 0 @card-radius @card-radius 0;
+}
+.has-error .ant-cascader-input.ant-input {
+    background-color: @danger-light !important;
+    border-color: @danger-light;
 }

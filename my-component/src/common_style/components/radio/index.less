@@ -28,6 +28,8 @@
   border-color: @btn-bg-color;
 }
 .ant-radio-inner::after {
+  top: 4px;
+  left: 4px;
   background-color: @primary-color;
 }
 .ant-radio-checked .ant-radio-inner {
@@ -119,12 +121,12 @@
   border-color: @btn-not-bg-color;
 }
 .ant-radio-button-wrapper-disabled:first-child, .ant-radio-button-wrapper-disabled:hover {
-    color: @text-prompt;
-    background-color: rgba(5, 105, 255, 0.5);
-    border-color: rgba(5, 105, 255, 0.5);
+  color:  @btn-not-color;
+  background-color: @btn-not-bg-color;
+  border-color: @btn-not-bg-color;
 }
 .ant-radio-checked .ant-radio-inner::after {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     background-color: @white;
 }

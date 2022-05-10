@@ -24,21 +24,21 @@
 .ant-time-picker-panel-input::-webkit-input-placeholder {
     color: @text-prompt;
 }
-.ant-time-picker-panel-input-wrap {
+.ant-time-picker-panel-input-wrap { 
     padding: 7px 2px 7px 12px;
     border: 1px solid @primary-color;
     border-radius: @border-radius-base;
-    background-color: @primary-bg;
+    background-color: @primary-light;
 }
 .ant-time-picker-panel-input {
     color: @text-title;
-    background-color: @primary-bg;
+    background-color: @transparent;
 }
 .ant-time-picker-panel-input-invalid {
     border-color: @error-color;
 }
 .ant-time-picker-panel-select {
-    border-left: 1px solid @line-split;
+    border-left: 1px solid @line-light;
 }
 .ant-time-picker-panel-select li:focus {
     color: @primary-color;
@@ -48,15 +48,22 @@
 }
 li.ant-time-picker-panel-select-option-selected {
     color: @primary-color;
-    background: @primary-bg;
+    background: @primary-bg; 
 }
 li.ant-time-picker-panel-select-option-selected:hover {
     color: @primary-color;
     background: @primary-bg;
 }
 .ant-time-picker {
+    width: 242px;
     color: @text-color;
     font-size: @font-size-base;
+}
+.ant-time-picker-panel-select {
+    width: 80px;
+}
+.ant-time-picker-panel-select ul {
+    width: 80px;
 }
 .ant-time-picker-input {
 position: relative;
